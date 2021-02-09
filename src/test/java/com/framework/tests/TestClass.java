@@ -16,6 +16,8 @@ public class TestClass {
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
 
+        System.out.println("New Line of code");
+
 
         driver.quit();
 
