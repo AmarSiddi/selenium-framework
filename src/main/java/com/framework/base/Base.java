@@ -29,7 +29,7 @@ public class Base {
         }
     }
 
-    public void driverInitialization() {
+    public void driverInitialization(String url) {
 
        String browserName = prop.getProperty("browserName");
 
@@ -61,7 +61,8 @@ public class Base {
 
         System.out.println("URL fetched : "+prop.getProperty("url"));
 
-        driver.get(prop.getProperty("url"));
+        //driver.get(prop.getProperty("url"));
+        driver.get(url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
