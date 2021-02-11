@@ -2,12 +2,12 @@ package com.framework.tests;
 
 import com.framework.base.Base;
 import com.framework.pages.HomePage;
+import com.framework.pages.elements.Buttons;
 import com.framework.pages.elements.CheckBox;
 import com.framework.pages.elements.ElementsPage;
 import com.framework.pages.elements.TextBox;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -18,16 +18,17 @@ public class ElementsTest extends Base {
     ElementsPage elementsPage;
     TextBox textBox;
     CheckBox checkBox;
+    Buttons buttons;
 
     @BeforeMethod
-    @Parameters ("URL")
+    @Parameters("URL")
     public void setup(String url) {
         driverInitialization(url);
         homePage = new HomePage();
         elementsPage = homePage.clickElementsPage();
     }
 
-    @Test (priority = 1, enabled = false)
+    @Test(priority = 1, enabled = false)
     public void textBox() {
         textBox = elementsPage.clickTextBox();
         textBox.fillTextBox(prop.getProperty("fullName"), prop.getProperty("email"),
@@ -36,7 +37,7 @@ public class ElementsTest extends Base {
         Assert.assertEquals(verifySavedFullName.substring(5), prop.getProperty("fullName"));
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2, enabled = false)
     public void checkBox() throws InterruptedException {
         checkBox = elementsPage.clickCheckBox();
 
@@ -45,10 +46,8 @@ public class ElementsTest extends Base {
         checkBox.expandDesktop();
 
         //Thread.sleep(5000);
-
         checkBox.checkNotesBox();
         checkBox.checkCommandsBox();
-
 
         //TODO Learn how to handle checkbox without type="checkbox"
         //Thread.sleep(5000);
@@ -63,6 +62,19 @@ public class ElementsTest extends Base {
         checkBox.collapseDesktop();
         Thread.sleep(5000);
         checkBox.collapseHome();
+
+    }
+
+    @Test(priority = 3, enabled = true)
+    public void verifyButtons() throws InterruptedException {
+        buttons = elementsPage.clickButton();
+        buttons.performDoubleClickButton();
+        buttons.performRightClickButton();
+        buttons.performDynamicClickButton();
+    }
+
+    @Test(priority = 4, enabled = false)
+    public void verifyLinks(){
 
     }
 

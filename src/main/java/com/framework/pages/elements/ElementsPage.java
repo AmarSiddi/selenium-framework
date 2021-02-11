@@ -47,4 +47,9 @@ public class ElementsPage extends Base {
         CheckBox.click();
         return new CheckBox();
     }
+
+    public Buttons clickButton() {
+        buttons.click();
+        return new Buttons();
+    }
 }

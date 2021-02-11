@@ -96,7 +96,7 @@ public class WebTables extends Base {
 
     }
 
-    //TODO
+    //TODO Learn how to traverse complete table and selenium whole column section
     public void getColumsInLastRow(){
 
     }
