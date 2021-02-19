@@ -4,11 +4,13 @@
     <test preserve-order="true" name=" Demo ToolsQA Tests">
         <parameter name="URL" value="https://demoqa.com/register"/>
         <classes>
-<!--            <class name="com.framework.tests.TestClass"/>-->
-            <class name="com.framework.tests.ElementsTest">
-            </class>
+<!--            <class name="com.framework.tests.TestClass"/>
+            <class name="com.framework.tests.ElementsTest"/> -->
+            <class name ="com.framework.tests.BrokenLinksTest" />
         </classes>
     </test>
+
+
 
 <!--    <test name="Test 2 ">
         <parameter name="URL" value="https://www.techlistic.com/p/demo-selenium-practice.html"/>
