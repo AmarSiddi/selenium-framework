@@ -2,15 +2,14 @@ package com.framework.tests;
 
 import com.framework.base.Base;
 import com.framework.pages.HomePage;
-import com.framework.pages.elements.Buttons;
-import com.framework.pages.elements.CheckBox;
-import com.framework.pages.elements.ElementsPage;
-import com.framework.pages.elements.TextBox;
+import com.framework.pages.elements.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 
 public class ElementsTest extends Base {
 
@@ -19,6 +18,7 @@ public class ElementsTest extends Base {
     TextBox textBox;
     CheckBox checkBox;
     Buttons buttons;
+    Links links;
 
     @BeforeMethod
     @Parameters("URL")
@@ -41,11 +41,8 @@ public class ElementsTest extends Base {
     public void checkBox() throws InterruptedException {
         checkBox = elementsPage.clickCheckBox();
 
-        //check the selected boxes
         checkBox.expandHome();
         checkBox.expandDesktop();
-
-        //Thread.sleep(5000);
         checkBox.checkNotesBox();
         checkBox.checkCommandsBox();
 
@@ -65,7 +62,7 @@ public class ElementsTest extends Base {
 
     }
 
-    @Test(priority = 3, enabled = true)
+    @Test(priority = 3, enabled = false)
     public void verifyButtons() throws InterruptedException {
         buttons = elementsPage.clickButton();
         buttons.performDoubleClickButton();
@@ -73,9 +70,14 @@ public class ElementsTest extends Base {
         buttons.performDynamicClickButton();
     }
 
-    @Test(priority = 4, enabled = false)
-    public void verifyLinks(){
-
+    @Test(priority = 4, enabled = true)
+    public void verifyNewTab(){
+        links = elementsPage.clickLinks();
+        String oldTab = driver.getWindowHandle();
+        links.clickOnHomeLink();
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        System.out.println(driver.getTitle());;
     }
 
 }

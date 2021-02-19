@@ -1,4 +1,4 @@
 package com.framework.pages.interactions;
 
-public class Dragable {
+public class Draggable {
 }

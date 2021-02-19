@@ -1,16 +1,45 @@
 package com.framework.pages.elements;
 
+import com.framework.base.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class Links {
+public class Links extends Base {
 
-    @FindBy(xpath = "//button[@id='doubleClickBtn']")
-    WebElement doubleClickButton;
+    @FindBy(css = "#simpleLink")
+    WebElement homeLink;
 
-    @FindBy(xpath = "//button[@id='rightClickBtn']")
-    WebElement rightClickButton;
+    @FindBy(xpath = "//a[@id='created']")
+    WebElement createdLink;
 
-    @FindBy(xpath = "//*[text()='Click Me']")
-    WebElement dynamicClickButton;
+    @FindBy(xpath = "//a[@id='no-content']")
+    WebElement noContentLink;
+
+    @FindBy(xpath = "//a[@id='bad-request']")
+    WebElement badRequestLink;
+
+    public Links() {
+        PageFactory.initElements(driver, this);
+    }
+
+    public void clickOnHomeLink() {
+        homeLink.click();
+    }
+
+    //TODO learn how to handle the API request using Web Driver
+    public void getCreatedAPIResponse(){
+
+    }
+
+    public void getNoContentLinkResponse(){
+
+    }
+
+    public void getBadRequestResponse(){
+
+    }
+
+
+
 }

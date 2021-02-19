@@ -1,4 +1,7 @@
 package com.framework.pages.alertframewindows;
 
-public class AlertFrameWindows {
+public class Alerts {
+
+    public Alerts() {
+    }
 }

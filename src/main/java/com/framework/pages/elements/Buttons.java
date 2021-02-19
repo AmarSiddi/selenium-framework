@@ -11,13 +11,13 @@ public class Buttons extends Base {
     Actions actions;
 
     @FindBy(xpath = "//button[@id='doubleClickBtn']")
-    WebElement doubleClickButton;
+    private WebElement doubleClickButton;
 
     @FindBy(xpath = "//button[@id='rightClickBtn']")
-    WebElement rightClickButton;
+    private WebElement rightClickButton;
 
     @FindBy(xpath = "//*[text()='Click Me']")
-    WebElement dynamicClickButton;
+    private WebElement dynamicClickButton;
 
     public Buttons(){
         PageFactory.initElements(driver,this);

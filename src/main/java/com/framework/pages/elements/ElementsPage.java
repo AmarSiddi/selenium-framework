@@ -1,11 +1,15 @@
 package com.framework.pages.elements;
 
 import com.framework.base.Base;
+import com.framework.utils.Utils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ElementsPage extends Base {
+
+    Utils utils;
 
     @FindBy(xpath = "//span[contains(text(),'Text Box')]")
     WebElement textBox;
@@ -22,7 +26,7 @@ public class ElementsPage extends Base {
     @FindBy(xpath = "//span[contains(text(),'Buttons')]")
     WebElement buttons;
 
-    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/span[1]")
+    @FindBy(xpath = "//span[text()='Links']")
     WebElement links;
 
     @FindBy(xpath = "//span[contains(text(),'Broken Links - Images')]")
@@ -36,6 +40,7 @@ public class ElementsPage extends Base {
 
     public ElementsPage(){
         PageFactory.initElements(driver, this);
+        utils = new Utils();
     }
 
     public TextBox clickTextBox(){
@@ -52,4 +57,11 @@ public class ElementsPage extends Base {
         buttons.click();
         return new Buttons();
     }
+
+    public Links clickLinks() {
+        utils.scrollToElement(links);
+        links.click();
+        return new Links();
+    }
+
 }
