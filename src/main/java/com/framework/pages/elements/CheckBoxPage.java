@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckBox extends Base {
+public class CheckBoxPage extends Base {
 
     @FindBy(xpath = "//li[@class='rct-node rct-node-parent rct-node-collapsed']/span[1]/button[1]/*[1]")
     WebElement homeExpand;
@@ -30,7 +30,7 @@ public class CheckBox extends Base {
     @FindBy(xpath = "//span[contains(text(),'Notes')]")
     WebElement notesText;
 
-    public CheckBox() {
+    public CheckBoxPage() {
         PageFactory.initElements(driver, this);
     }
 

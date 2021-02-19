@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  * Assignment 4: Verify that 6th row (Last Row) has only two columns.
  *******/
 
-public class WebTables extends Base {
+public class WebTablesPage extends Base {
 
 
     @FindBy(xpath = "//table[@class='tsc_table_s13']/tbody/tr/th[1]")
@@ -49,7 +49,7 @@ public class WebTables extends Base {
     WebElement tableFoot;
 
 
-    public WebTables() {
+    public WebTablesPage() {
         PageFactory.initElements(driver, this);
     }
 

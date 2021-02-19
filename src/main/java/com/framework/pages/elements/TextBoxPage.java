@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TextBox extends Base {
+public class TextBoxPage extends Base {
 
     HomePage homePage = new HomePage();
     ElementsPage elementsPage = new ElementsPage();
@@ -27,7 +27,7 @@ public class TextBox extends Base {
     @FindBy(xpath = "//button[@id='submit']")
     WebElement saveButton;
 
-    public TextBox() {
+    public TextBoxPage() {
         PageFactory.initElements(driver, this);
     }
 

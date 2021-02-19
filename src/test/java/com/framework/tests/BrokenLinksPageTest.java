@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class BrokenLinksTest extends Base {
+public class BrokenLinksPageTest extends Base {
     HomePage homePage;
     BrokenLinksPage brokenLinksPage;
     ElementsPage elementsPage;
@@ -28,7 +28,6 @@ public class BrokenLinksTest extends Base {
         Assert.assertTrue(brokenLinksPage.getAllBrokenImages());
         //This should be handled in the real time projects
         //Assert.assertFalse(brokenLinksPage.getAllBrokenImage(););
-
     }
 
     @Test(priority = 2, enabled = true)

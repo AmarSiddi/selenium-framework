@@ -42,25 +42,25 @@ public class ElementsPage extends Base {
         javaScriptUtils = new JavaScriptUtils();
     }
 
-    public TextBox clickTextBox(){
+    public TextBoxPage clickTextBox(){
         textBox.click();
-        return new TextBox();
+        return new TextBoxPage();
     }
 
-    public CheckBox clickCheckBox() {
+    public CheckBoxPage clickCheckBox() {
         CheckBox.click();
-        return new CheckBox();
+        return new CheckBoxPage();
     }
 
-    public Buttons clickButton() {
+    public ButtonsPage clickButton() {
         buttons.click();
-        return new Buttons();
+        return new ButtonsPage();
     }
 
-    public Links clickLinks() {
+    public LinksPage clickLinks() {
         javaScriptUtils.scrollToElement(links);
         links.click();
-        return new Links();
+        return new LinksPage();
     }
 
     public BrokenLinksPage brokenLinks() {

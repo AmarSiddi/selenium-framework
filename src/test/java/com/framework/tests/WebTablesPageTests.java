@@ -1,37 +1,36 @@
 package com.framework.tests;
 
 import com.framework.base.Base;
-import com.framework.pages.elements.WebTables;
+import com.framework.pages.elements.WebTablesPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class WebTablesTests extends Base {
+public class WebTablesPageTests extends Base {
 
-    WebTables webTables;
+    WebTablesPage webTablesPage;
 
     @BeforeMethod
     @Parameters("URL")
     public void setup(String url){
         driverInitialization(url);
-        webTables = new WebTables();
+        webTablesPage = new WebTablesPage();
     }
 
     @Test(priority = 1, enabled = false)
     public void verifyTableBodyHeaders(){
-        Assert.assertEquals(webTables.getTableBodyHeadersCount(), webTables.getTotalValueFromFooter());
+        Assert.assertEquals(webTablesPage.getTableBodyHeadersCount(), webTablesPage.getTotalValueFromFooter());
     }
 
     @Test(priority = 2, enabled = false)
     public void verifyBurjKhalifaHeight(){
-        Assert.assertEquals("829m", webTables.getBurjKhalifaHeight());
+        Assert.assertEquals("829m", webTablesPage.getBurjKhalifaHeight());
     }
 
     @Test(priority = 3)
     public void verifyTableBodyData(){
-        webTables.getTableBodyValues();
+        webTablesPage.getTableBodyValues();
     }
 
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Links extends Base {
+public class LinksPage extends Base {
 
     @FindBy(css = "#simpleLink")
     WebElement homeLink;
@@ -19,7 +19,7 @@ public class Links extends Base {
     @FindBy(xpath = "//a[@id='bad-request']")
     WebElement badRequestLink;
 
-    public Links() {
+    public LinksPage() {
         PageFactory.initElements(driver, this);
     }
 

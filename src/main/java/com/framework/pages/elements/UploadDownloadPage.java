@@ -10,7 +10,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
-public class UploadDownload extends Base {
+public class UploadDownloadPage extends Base {
 
     Robot robot;
     @FindBy(xpath = "")
@@ -19,7 +19,7 @@ public class UploadDownload extends Base {
     @FindBy(xpath = "")
     WebElement uploadButton;
 
-    public UploadDownload() {
+    public UploadDownloadPage() {
         PageFactory.initElements(driver, this);
         try {
             robot = new Robot();

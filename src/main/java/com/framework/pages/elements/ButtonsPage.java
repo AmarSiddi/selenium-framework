@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Buttons extends Base {
+public class ButtonsPage extends Base {
 
     Actions actions;
 
@@ -19,7 +19,7 @@ public class Buttons extends Base {
     @FindBy(xpath = "//*[text()='Click Me']")
     private WebElement dynamicClickButton;
 
-    public Buttons(){
+    public ButtonsPage(){
         PageFactory.initElements(driver,this);
         actions = new Actions(driver);
     }
