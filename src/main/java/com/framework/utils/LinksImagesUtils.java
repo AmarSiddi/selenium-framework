@@ -1,11 +1,13 @@
 package com.framework.utils;
 
 import com.framework.base.Base;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class LinksImagesUtils extends Base {
         for (String urlString : getAllLinksFromWebPage()) {
             URL url = new URL(urlString);
             HttpURLConnection openConnection = (HttpURLConnection) url.openConnection();
+
             openConnection.setConnectTimeout(3000);
             openConnection.connect();
             int responseCode = openConnection.getResponseCode();

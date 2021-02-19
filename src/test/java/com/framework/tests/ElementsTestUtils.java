@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class ElementsTest extends Base {
+public class ElementsTestUtils extends Base {
 
     HomePage homePage;
     ElementsPage elementsPage;
@@ -25,7 +25,7 @@ public class ElementsTest extends Base {
     public void setup(String url) {
         driverInitialization(url);
         homePage = new HomePage();
-        elementsPage = homePage.clickElementsPage();
+        elementsPage = homePage.clickOnElementsPage();
     }
 
     @Test(priority = 1, enabled = false)

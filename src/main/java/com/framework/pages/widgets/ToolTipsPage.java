@@ -1,4 +1,4 @@
 package com.framework.pages.widgets;
 
-public class Menu {
+public class ToolTipsPage {
 }

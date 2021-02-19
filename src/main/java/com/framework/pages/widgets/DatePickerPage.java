@@ -1,4 +1,4 @@
 package com.framework.pages.widgets;
 
-public class Tabs {
+public class DatePickerPage {
 }

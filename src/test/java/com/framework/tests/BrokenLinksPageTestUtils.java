@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class BrokenLinksPageTest extends Base {
+public class BrokenLinksPageTestUtils extends Base {
     HomePage homePage;
     BrokenLinksPage brokenLinksPage;
     ElementsPage elementsPage;
@@ -19,7 +19,7 @@ public class BrokenLinksPageTest extends Base {
     public void setUp(String url) {
         driverInitialization(url);
         homePage = new HomePage();
-        elementsPage = homePage.clickElementsPage();
+        elementsPage = homePage.clickOnElementsPage();
         brokenLinksPage = elementsPage.brokenLinks();
     }
 
