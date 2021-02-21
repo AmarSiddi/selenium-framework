@@ -1,7 +1,9 @@
 package com.framework.pages;
 
 import com.framework.base.Base;
+import com.framework.pages.alertframewindows.AlertFrameWindowsPage;
 import com.framework.pages.elements.ElementsPage;
+import com.framework.pages.forms.FormPage;
 import com.framework.pages.interactions.Interaction;
 import com.framework.pages.widgets.Widgets;
 import com.framework.utils.JavaScriptUtils;
@@ -48,6 +50,16 @@ public class HomePage extends Base {
         javaScriptUtils.scrollToElement(interactionLink);
         interactionLink.click();
         return new Interaction();
+    }
+
+    public AlertFrameWindowsPage clickOnAlertFrameWindows() {
+        alertFrameWindowsPage.click();
+        return new AlertFrameWindowsPage();
+    }
+
+    public FormPage clickOnForm(){
+        formsPage.click();
+        return new FormPage();
     }
 
 }

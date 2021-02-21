@@ -3,13 +3,13 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="E:/Projects/selenium-framework/src/test/java/com/framework/tests/TestClass.java(failed)">
     <classes>
-      <class name="com.framework.tests.ElementsTest">
+      <class name="com.framework.tests.ElementsTestUtils">
         <methods>
           <include name="textBox"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.framework.tests.ElementsTest -->
+      </class> <!-- com.framework.tests.ElementsTestUtils -->
     </classes>
   </test> <!-- E:/Projects/selenium-framework/src/test/java/com/framework/tests/TestClass.java(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
