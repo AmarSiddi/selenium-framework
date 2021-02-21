@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class Base {
 
@@ -37,6 +38,7 @@ public class Base {
             case "chrome":
 
                 System.out.println("Chrome driver has been initialised");
+
 
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
@@ -69,7 +71,7 @@ public class Base {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         driver.quit();
     }
