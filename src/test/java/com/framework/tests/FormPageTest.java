@@ -1,5 +1,9 @@
 package com.framework.tests;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.framework.base.Base;
 import com.framework.pages.HomePage;
 import com.framework.pages.forms.FormPage;
@@ -17,38 +21,23 @@ import java.util.Iterator;
 
 public class FormPageTest extends Base {
 
-    /*@DataProvider
-    public Object[][] getData() {
-        //Object[][] obj= {{"2","3","5"},{"dump","",""},{"","","One"}};
-        Object[] obj = {""};
+    static HomePage homePage;
+    static FormPage formPage;
 
-        return new Object[][]{
-                new Object[]{10}
-        };
-    }*/
+    @BeforeMethod
+    @Parameters({"URL", "browserName"})
+    public void setUp(String url, String browserName) {
 
-    /*@DataProvider
-    public Object[] getData(){
-        Object[] obj= {"test","dump","One"};
-        return obj;
-    }*/
+        driverInitialization(url, browserName);
+        homePage = new HomePage();
+        formPage = homePage.clickOnForm();
+        formPage.clickPracticeFormLink();
+    }
 
     @DataProvider()
     public Iterator<Object[]> getData() {
         ArrayList<Object[]> arrayList = new ReadExcelFile().readDataFromExcel();
         return arrayList.iterator();
-    }
-
-    HomePage homePage;
-    FormPage formPage;
-
-    @BeforeMethod
-    @Parameters("URL")
-    public void setUp(String url) {
-        driverInitialization(url);
-        homePage = new HomePage();
-        formPage = homePage.clickOnForm();
-        formPage.clickPracticeFormLink();
     }
 
     @Test(dataProvider = "getData", priority = 1, enabled = false)

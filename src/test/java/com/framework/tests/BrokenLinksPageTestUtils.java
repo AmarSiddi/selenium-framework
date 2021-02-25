@@ -15,9 +15,9 @@ public class BrokenLinksPageTestUtils extends Base {
     ElementsPage elementsPage;
 
     @BeforeMethod
-    @Parameters("URL")
-    public void setUp(String url) {
-        driverInitialization(url);
+    @Parameters({"URL","browserName"})
+    public void setUp(String url, String browserName) {
+        driverInitialization(url, browserName);
         homePage = new HomePage();
         elementsPage = homePage.clickOnElementsPage();
         brokenLinksPage = elementsPage.brokenLinks();

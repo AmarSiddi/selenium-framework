@@ -12,24 +12,24 @@ public class WebTablesPageTests extends Base {
     WebTablesPage webTablesPage;
 
     @BeforeMethod
-    @Parameters("URL")
-    public void setup(String url){
-        driverInitialization(url);
+    @Parameters({"URL", "browserName"})
+    public void setup(String url, String browserName) {
+        driverInitialization(url, browserName);
         webTablesPage = new WebTablesPage();
     }
 
     @Test(priority = 1, enabled = false)
-    public void verifyTableBodyHeaders(){
+    public void verifyTableBodyHeaders() {
         Assert.assertEquals(webTablesPage.getTableBodyHeadersCount(), webTablesPage.getTotalValueFromFooter());
     }
 
     @Test(priority = 2, enabled = false)
-    public void verifyBurjKhalifaHeight(){
+    public void verifyBurjKhalifaHeight() {
         Assert.assertEquals("829m", webTablesPage.getBurjKhalifaHeight());
     }
 
     @Test(priority = 3)
-    public void verifyTableBodyData(){
+    public void verifyTableBodyData() {
         webTablesPage.getTableBodyValues();
     }
 

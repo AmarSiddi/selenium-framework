@@ -23,9 +23,10 @@ public class WidgetsTest extends Base {
     static Actions actions;
     static SoftAssert softAssert;
     static String URL = "https://demoqa.com/register";
+    String browserName = "chrome";
 
     public WidgetsTest() {
-        driverInitialization(URL);
+        driverInitialization(URL, browserName);
         actions = new Actions(driver);
         softAssert = new SoftAssert();
         homePage = new HomePage();
@@ -104,7 +105,7 @@ public class WidgetsTest extends Base {
         int xCoord = slider.getLocation().getX();
         System.out.println(xCoord);
 
-        actions.dragAndDropBy(slider,sliderWidth/2,0).build().perform();
+        actions.dragAndDropBy(slider, sliderWidth / 2, 0).build().perform();
         //actions.clickAndHold(slider).moveByOffset(  150, 0).build().perform();
 
         String sliderValue = findByXPATH("//input[@id='sliderValue']").getAttribute("value");

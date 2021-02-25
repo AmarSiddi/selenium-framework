@@ -21,9 +21,9 @@ public class ElementsTestUtils extends Base {
     LinksPage linksPAge;
 
     @BeforeMethod
-    @Parameters("URL")
-    public void setup(String url) {
-        driverInitialization(url);
+    @Parameters({"URL", "browserName"})
+    public void setup(String url, String browserName) {
+        driverInitialization(url, browserName);
         homePage = new HomePage();
         elementsPage = homePage.clickOnElementsPage();
     }
@@ -71,13 +71,14 @@ public class ElementsTestUtils extends Base {
     }
 
     @Test(priority = 4, enabled = true)
-    public void verifyNewTab(){
+    public void verifyNewTab() {
         linksPAge = elementsPage.clickLinks();
         String oldTab = driver.getWindowHandle();
         linksPAge.clickOnHomeLink();
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        System.out.println(driver.getTitle());;
+        System.out.println(driver.getTitle());
+        ;
     }
 
 }

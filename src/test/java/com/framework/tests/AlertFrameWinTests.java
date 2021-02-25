@@ -23,9 +23,10 @@ public class AlertFrameWinTests extends Base {
     static SoftAssert softAssert;
     static Alert alert;
     static String URL = "https://demoqa.com/register";
+    String browserName = "chrome";
 
     public AlertFrameWinTests() {
-        driverInitialization(URL);
+        driverInitialization(URL,browserName);
         actions = new Actions(driver);
         softAssert = new SoftAssert();
         homePage = new HomePage();

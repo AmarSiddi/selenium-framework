@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test preserve-order="true" name=" Demo ToolsQA Tests">
+<suite name="All Test Suite" thread-count="5" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.framework.report.ListenerImplementation"/>
+    </listeners>
+
+    <test name=" chrome Demo ToolsQA Tests">
         <parameter name="URL" value="https://demoqa.com/register"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
-<!--            <class name="com.framework.tests.TestUtilsClass"/>
-            <class name="com.framework.tests.ElementsTestUtils"/> -->
-            <class name ="com.framework.tests.FormPageTest" />
+            <!--            <class name="com.framework.tests.ExtentReportTest"/>
+                        <class name="com.framework.tests.ElementsTestUtils"/> -->
+            <class name="com.framework.tests.TestClass"/>
         </classes>
     </test>
 
-
-
-<!--    <test name="Test 2 ">
-        <parameter name="URL" value="https://www.techlistic.com/p/demo-selenium-practice.html"/>
+    <test name=" FireFox Demo ToolsQA Tests">
+        <parameter name="URL" value="https://demoqa.com/register"/>
+        <parameter name="browserName" value="firefox"/>
         <classes>
-            <class name="com.framework.tests.WebTablesPageTests"/>
+            <!--            <class name="com.framework.tests.ExtentReportTest"/>
+                        <class name="com.framework.tests.ElementsTestUtils"/> -->
+            <class name="com.framework.tests.TestClass"/>
+        </classes>
+    </test>
+
+    <!--<test preserve-order="true" name=" FireFox Demo ToolsQA Tests">
+        <parameter name="URL" value="https://demoqa.com/register"/>
+        <parameter name="browserName" value="firefox"/>
+        <classes>
+            &lt;!&ndash;            <class name="com.framework.tests.ExtentReportTest"/>
+                        <class name="com.framework.tests.ElementsTestUtils"/> &ndash;&gt;
+            <class name="com.framework.tests.TestClass"/>
         </classes>
     </test>-->
+
+
+    <!--    <test name="Test 2 ">
+            <parameter name="URL" value="https://www.techlistic.com/p/demo-selenium-practice.html"/>
+            <classes>
+                <class name="com.framework.tests.WebTablesPageTests"/>
+            </classes>
+        </test>-->
 
 </suite>
