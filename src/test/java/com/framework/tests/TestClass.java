@@ -1,46 +1,52 @@
 package com.framework.tests;
 
 import com.framework.base.Base;
+import com.framework.utils.Driver;
 import lombok.SneakyThrows;
 import org.testng.SkipException;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
+
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
 public class TestClass extends Base {
 
-    @BeforeMethod
+    String URL;
+
+    @BeforeMethod(enabled = true)
     @Parameters({"URL", "browserName"})
+    @SneakyThrows
     public void setup(String url, String browserName) {
-        driverInitialization(url, browserName);
+        Thread.sleep(1000);
+        Driver.setDriver(Driver.initDriver(url, browserName));
     }
 
     @Test(priority = 1)
-    @Parameters({"URL", "browserName"})
-    public void firstTest(String url, String browserName) {
-        //driverInitialization(url,browserName);
-        System.out.println("First Test");
+    public void firstTest() {
+        Driver.getDriver().getTitle();
+        System.out.println("First Test Thread: " + Thread.currentThread().getId());
         //driver.navigate().refresh();
     }
 
-    @Test(priority = 2)
-    @Parameters({"URL", "browserName"})
-    public void secondTest(String url, String browserName) {
-        //driverInitialization(url,browserName);
-        System.out.println("Second Test");
+    @Test(priority = 2, enabled = true)
+    public void secondTest() {
+        Driver.getDriver().getWindowHandle();
+        System.out.println("Second Test Thread: " + Thread.currentThread().getId());
         //driver.navigate().refresh();
-
     }
 
     @Test(priority = 3, enabled = false)
     public void thirdTest() {
+        Driver.getDriver();
         throw new NoSuchElementException();
     }
 
     @Test(priority = 4, enabled = false)
     @SneakyThrows
     public void fourthTest() {
+        Driver.getDriver();
         throw new TimeoutException();
     }
 
@@ -54,8 +60,9 @@ public class TestClass extends Base {
         throw new SkipException("Test skipped");
     }
 
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
+        System.out.println(Driver.getDriver());
+        Driver.getDriver().close();
     }
 }

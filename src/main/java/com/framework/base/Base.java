@@ -72,7 +72,7 @@ public class Base {
                 break;
         }
 
-        System.out.println("URL fetched : "+prop.getProperty("url"));
+        //System.out.println("URL fetched : "+prop.getProperty("url"));
 
         //driver.get(prop.getProperty("url"));
         driver.get(url);

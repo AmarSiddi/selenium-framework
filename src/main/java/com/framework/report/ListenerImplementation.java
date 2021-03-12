@@ -36,15 +36,15 @@ public class ListenerImplementation extends Base implements ITestListener {
         extentTest.fail("Test Case " + getMethodName(result) + " is failed.");
         extentTest.info("Error stack: " + result.getThrowable());
 
-        TakesScreenshot screenshot = (TakesScreenshot) driver;
-        File srcPath = screenshot.getScreenshotAs(OutputType.FILE);
+        //TakesScreenshot screenshot = (TakesScreenshot) driver;
+        //File srcPath = screenshot.getScreenshotAs(OutputType.FILE);
         String dest = System.getProperty("user.dir") + "/ExtentReports/screenshots/test"
                 + TestUtils.getDateFormat() + ".jpg";
 
         File destPath = new File(dest);
-        FileUtils.copyFile(srcPath, destPath);
+        //FileUtils.copyFile(srcPath, destPath);
 
-        extentTest.addScreenCaptureFromPath(dest);
+        //extentTest.addScreenCaptureFromPath(dest);
 
     }
 

@@ -33,7 +33,6 @@ public class AlertFrameWinTests extends Base {
     }
 
     public static void main(String[] args) {
-
         afw = new AlertFrameWinTests();
         alertFrameWindowsPage = homePage.clickOnAlertFrameWindows();
         handleAlerts();
